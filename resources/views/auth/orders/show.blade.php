@@ -18,7 +18,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($order->products as $product)
+                    @foreach ($products as $product)
                         <tr>
                             <td>
                                 <a href="{{ route('product', [$product->category->code, $product->code]) }}">
@@ -27,7 +27,7 @@
                                     {{ $product->name }}
                                 </a>
                             </td>
-                            <td><span class="badge">1</span></td>
+                            <td><span class="badge">{{$product->pivot->count}}</span></td>
                             <td>{{ $product->price }} руб.</td>
                             <td>{{ $product->getPriceForCount()}} руб.</td>
                         </tr>

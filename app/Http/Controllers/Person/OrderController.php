@@ -29,7 +29,7 @@ class OrderController extends Controller
     {
         
         //dd(Route::currentRouteNamed('person.orders.index'));
-        $orders = Auth::user()->orders()->where('status', 1)->paginate(6);
+        $orders = Auth::user()->orders()->active()->paginate(6);
         return view('auth.orders.index', compact('orders'));
     }
 

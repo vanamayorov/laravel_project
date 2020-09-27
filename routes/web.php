@@ -22,6 +22,7 @@ Auth::routes([
 
 Route::get('/logout', 'Auth\LoginController@logout')->name('get-logout');
 
+Route::get('/reset', 'ResetController@reset')->name('reset');
 
 Route::middleware(['auth'])->group(function () {
     Route::group([
@@ -52,7 +53,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/', 'MainController@index')->name('index');
 
 Route::group(['prefix' => 'cart'], function () {
-    Route::post('/add/{id}', 'CartController@productAdd')->name('productAdd');
+    Route::post('/add/{product}', 'CartController@productAdd')->name('productAdd');
 
     Route::group(['middleware' => 'basket_not_empty'], function () {
 
@@ -60,7 +61,7 @@ Route::group(['prefix' => 'cart'], function () {
 
         Route::get('/place', 'CartController@cartPlace')->name('cartPlace');
 
-        Route::post('/remove/{id}', 'CartController@productRemove')->name('productRemove');
+        Route::post('/remove/{product}', 'CartController@productRemove')->name('productRemove');
 
         Route::post('/confirm', 'CartController@cartConfirm')->name('cartConfirm');
     });

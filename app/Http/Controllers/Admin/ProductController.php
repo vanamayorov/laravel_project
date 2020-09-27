@@ -42,6 +42,7 @@ class ProductController extends Controller
     public function store(ProductRequest $request)
     {
         $params = $request->all();
+        
         unset($params['image']);
         if($request->has('image')){
             $path = $request->file('image')->store('products');
@@ -90,6 +91,11 @@ class ProductController extends Controller
             $path = $request->file('image')->store('products');
            
             $params['image'] = $path;
+        }
+        foreach(['new', 'hit', 'recommend'] as $fieldName){
+            if(!isset($params[$fieldName])){
+                $params[$fieldName] = 0;  
+            }
         }
         
         $product->update($params);

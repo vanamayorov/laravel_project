@@ -1,0 +1,19 @@
+{
+    "files.autoSave": "afterDelay",
+    "window.zoomLevel": 0,
+    "beautify.onSave":  true,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
+    "editor.renderWhitespace": "none",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "beautify.JSfiles": [
+        "js",
+        "json",
+        "jsbeautifyrc",
+        "jshintrc",
+        "ts"
+    ],
+    "beautify.config": ""
+}

@@ -43,14 +43,14 @@
                </div>
             </td>
             <td>{{$product->price}} ₽</td>
-            <td>{{$product->price * $product->pivot->count}} ₽</td>
+            <td>{{$product->getPriceForCount()}} ₽</td>
          </tr>
          @empty
          <p>You have no products in your cart!</p>
          @endforelse
          <tr>
             <td colspan="3">Общая стоимость:</td>
-            <td>{{$order->calculatePrice()}} ₽</td>
+            <td>{{$order->getFullSum()}} ₽</td>
          </tr>
       </tbody>
       

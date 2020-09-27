@@ -13,9 +13,9 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
-            ['name' => 'Мобильные телефоны', 'code' => 'mobiles', 'description' => 'Описание мобильных телефонов'],
-            ['name' => 'Портативная техника', 'code' => 'portable', 'description' => 'Описание для раздела портативной техники'],
-            ['name' => 'Бытовая техника', 'code' => 'technics', 'description' => 'Раздел с бытовой техникой'],
+            ['name' => 'Мобильные телефоны', 'code' => 'mobiles', 'description' => 'Описание мобильных телефонов', 'image' => 'categories/mobiles.jpeg'],
+            ['name' => 'Портативная техника', 'code' => 'portable', 'description' => 'Описание для раздела портативной техники', 'image' => 'categories/portable.jpeg'],
+            ['name' => 'Бытовая техника', 'code' => 'technics', 'description' => 'Раздел с бытовой техникой', 'image' => 'categories/technics.jpeg'],
         ]);
     }
 }

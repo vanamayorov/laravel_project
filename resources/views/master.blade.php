@@ -24,6 +24,9 @@
                   <li @routeclass('categor*')><a href="{{route('categories')}}">Категории</a>
                   </li>
                   <li @routeclass('cart*')><a href="{{route('cart')}}">В корзину</a></li>
+                  <li>
+                     <a href="{{route('reset')}}">Сбросить проект в начальное состояние</a>
+                 </li>
                </ul>
                <ul class="nav navbar-nav navbar-right">
                   @guest
